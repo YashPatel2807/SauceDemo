@@ -11,6 +11,10 @@ export class InventoryPage {
     await expect(cart_badge).toHaveText(count);
   }
 
+  async openCart(page: Page) {
+    await page.locator("[data-test='shopping-cart-link']").click();
+  }
+
   async logoutUser(page: Page) {
     await page.locator("#react-burger-menu-btn").click();
     await page.locator("#logout_sidebar_link").click();
