@@ -10,4 +10,5 @@ test("Cart functionality", async ({ page }) => {
   await login.open(page);
   await login.login(page, users.valid_users, users.password);
   await inventoary.addProductsToCart(page);
+  await inventoary.verifyBadgeCount(page, "2");
 });
